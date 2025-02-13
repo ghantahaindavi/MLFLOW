@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/punee/Projects/MLflow%20starter/1-MLproject/mlruns/921316330725497696/6c96e683d3914579965ba63e9e64f89b/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '921316330725497696'
+lifecycle_stage: active
+run_id: 6c96e683d3914579965ba63e9e64f89b
+run_name: serious-flea-546
+run_uuid: 6c96e683d3914579965ba63e9e64f89b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739464707938
+status: 1
+tags: []
+user_id: punee

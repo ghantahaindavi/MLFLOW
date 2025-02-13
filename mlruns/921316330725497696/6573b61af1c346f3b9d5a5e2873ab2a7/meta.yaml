@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/punee/Projects/MLflow%20starter/1-MLproject/mlruns/921316330725497696/6573b61af1c346f3b9d5a5e2873ab2a7/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '921316330725497696'
+lifecycle_stage: active
+run_id: 6573b61af1c346f3b9d5a5e2873ab2a7
+run_name: fearless-squid-402
+run_uuid: 6573b61af1c346f3b9d5a5e2873ab2a7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739471370049
+status: 1
+tags: []
+user_id: punee

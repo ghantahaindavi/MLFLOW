@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/punee/Projects/MLflow%20starter/1-MLproject/mlruns/921316330725497696/f151cf0a86a5401b9776efc275cc92e0/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '921316330725497696'
+lifecycle_stage: active
+run_id: f151cf0a86a5401b9776efc275cc92e0
+run_name: righteous-dog-688
+run_uuid: f151cf0a86a5401b9776efc275cc92e0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739475771855
+status: 1
+tags: []
+user_id: punee

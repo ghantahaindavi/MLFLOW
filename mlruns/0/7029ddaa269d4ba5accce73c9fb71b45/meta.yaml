@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/punee/Projects/MLflow%20starter/1-MLproject/mlruns/0/7029ddaa269d4ba5accce73c9fb71b45/artifacts
+end_time: 1739464707933
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 7029ddaa269d4ba5accce73c9fb71b45
+run_name: unequaled-cub-678
+run_uuid: 7029ddaa269d4ba5accce73c9fb71b45
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739462763543
+status: 3
+tags: []
+user_id: punee

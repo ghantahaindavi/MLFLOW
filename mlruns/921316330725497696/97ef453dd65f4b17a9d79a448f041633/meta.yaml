@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/punee/Projects/MLflow%20starter/1-MLproject/mlruns/921316330725497696/97ef453dd65f4b17a9d79a448f041633/artifacts
+end_time: 1739475461540
+entry_point_name: ''
+experiment_id: '921316330725497696'
+lifecycle_stage: active
+run_id: 97ef453dd65f4b17a9d79a448f041633
+run_name: bustling-smelt-713
+run_uuid: 97ef453dd65f4b17a9d79a448f041633
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739475404895
+status: 4
+tags: []
+user_id: punee

@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/punee/Projects/MLflow%20starter/1-MLproject/mlruns/921316330725497696/8c0fb82325ce4955acc8f70007afc45b/artifacts
+end_time: 1739475401707
+entry_point_name: ''
+experiment_id: '921316330725497696'
+lifecycle_stage: active
+run_id: 8c0fb82325ce4955acc8f70007afc45b
+run_name: classy-trout-471
+run_uuid: 8c0fb82325ce4955acc8f70007afc45b
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1739471676967
+status: 3
+tags: []
+user_id: punee

@@ -1,67 +1,80 @@
-##Project Description: Customer Churn Prediction with Segmentation and Model Optimization
+# Customer Churn Prediction with Segmentation and Model Optimization
 
-This project focuses on predicting customer churn by analyzing various customer attributes and using machine learning techniques, including data preprocessing, customer segmentation, and model optimization. The pipeline also incorporates MLflow for experiment tracking and model management. Below is a detailed description of the key steps involved:
+This project focuses on predicting customer churn by analyzing various customer attributes and using machine learning techniques, including data preprocessing, customer segmentation, and model optimization. The pipeline also incorporates **MLflow** for experiment tracking and model management.
 
-1. Data Preparation and Preprocessing:
-Loading the Dataset: The dataset Churn_Modelling.csv is loaded, containing customer-related information such as demographics, account details, and whether the customer exited or not.
+---
 
-Label Encoding and One-Hot Encoding:
+## 📌 Project Workflow
 
-Gender Encoding: The categorical Gender column is transformed into numerical values using LabelEncoder, where 'Male' is encoded as 1 and 'Female' as 0.
-Geography Encoding: The Geography column is encoded using OneHotEncoder, creating binary columns for each geographic region (France, Germany, Spain).
-Data Cleaning:
+### 1️⃣ Data Preparation and Preprocessing
+- **Loading the Dataset:** The dataset (`Churn_Modelling.csv`) contains customer-related information such as demographics, account details, and churn status.
+- **Label Encoding and One-Hot Encoding:**
+  - `Gender Encoding`: Converted categorical `Gender` into numerical values (`Male = 1, Female = 0`) using `LabelEncoder`.
+  - `Geography Encoding`: Used `OneHotEncoder` to create binary columns for geographic regions (`France, Germany, Spain`).
+- **Data Cleaning:**
+  - Removed unnecessary columns (`Surname, RowNumber`) and handled missing values (`dropna`).
 
-The dataset is cleaned by removing unnecessary columns such as Surname and RowNumber, and by handling missing values (dropna).
-2. Customer Segmentation:
-Standardization: The numerical features are standardized using StandardScaler, which normalizes the feature scales and ensures all features are treated equally during clustering.
+---
 
-K-Means Clustering:
+### 2️⃣ Customer Segmentation
+- **Standardization:** Applied `StandardScaler` to normalize numerical features for effective clustering.
+- **K-Means Clustering:**
+  - Used the **Elbow Method** to determine the optimal number of clusters.
+  - Selected **3 clusters** to segment customers.
+- **Dimensionality Reduction:**
+  - Applied **PCA (Principal Component Analysis)** to reduce data to **2D** for better visualization.
+  - Plotted **customer clusters** based on key attributes.
+- **Cluster Analysis:** Analyzed customer segments based on feature distributions.
 
-The Elbow Method is used to identify the optimal number of clusters by plotting the inertia (sum of squared distances from the cluster centers).
-Based on the elbow plot, 3 clusters are chosen for segmenting customers into distinct groups.
-Dimensionality Reduction:
+---
 
-PCA (Principal Component Analysis) is applied to reduce the dimensionality of the dataset to 2D, facilitating visualization of the customer segments.
-The resulting 2D plot shows how customers are grouped into clusters based on their features.
-Cluster Analysis:
+### 3️⃣ Model Building
+- **Random Forest Classifier:**
+  - Implemented `RandomForestClassifier` for churn prediction.
+- **Hyperparameter Tuning:**
+  - Used `GridSearchCV` to optimize parameters (`n_estimators, max_depth, min_samples_split, min_samples_leaf`).
+- **Train-Test Split:** Used `train_test_split` to split data into training and test sets.
 
-After clustering, the data is grouped by the Cluster label, and the mean of each feature is calculated to analyze the characteristics of each customer group. These segments can help in identifying customer patterns and behaviors.
-3. Model Building:
-Random Forest Classifier:
+---
 
-RandomForestClassifier is used to predict whether a customer will churn (Exited). The model is a robust ensemble method that works well with structured data.
-Hyperparameter Tuning with GridSearchCV:
+### 4️⃣ Handling Imbalanced Data
+- **SMOTE (Synthetic Minority Over-sampling Technique):**
+  - Applied `SMOTE` to **balance the dataset**, generating synthetic samples for the minority class.
 
-GridSearchCV is utilized to tune the hyperparameters of the Random Forest model, including n_estimators, max_depth, min_samples_split, and min_samples_leaf. This improves model performance by selecting the best combination of hyperparameters through cross-validation.
-Train-Test Split:
+---
 
-The dataset is split into training and test sets using train_test_split to prevent data leakage and ensure proper model evaluation.
-4. Handling Imbalanced Data:
-SMOTE (Synthetic Minority Over-sampling Technique):
-SMOTE is applied to balance the class distribution in the training set, particularly addressing the problem of class imbalance in the Exited column. SMOTE creates synthetic samples for the minority class (non-churn customers) to improve model performance.
-5. Model Training and Evaluation:
-Model Training:
+### 5️⃣ Model Training and Evaluation
+- **Training:** Optimized **Random Forest model** trained on balanced data.
+- **Evaluation Metrics:** Assessed using:
+  - **Accuracy**
+  - **Precision**
+  - **Recall**
+  - **F1-score**
+- **MLflow Integration:**
+  - **Experiment Tracking:** Logged model parameters and metrics using `MLflow`.
+  - **Model Registration:** Stored the best-performing model as `Churn_RF_Model` for future deployment.
 
-The optimized Random Forest model is trained on the resampled training data, and the best performing model is selected through GridSearchCV.
-Model Evaluation:
+---
 
-Model performance is assessed using several evaluation metrics: accuracy, precision, recall, and f1-score. These metrics help gauge the model's ability to correctly predict churn versus non-churn customers.
-MLflow Integration:
+### 6️⃣ Conclusion and Insights
+- **Customer Segments Identified:**
+  - **Cluster 0:** High account balance, moderate churn risk.
+  - **Cluster 1:** Low balance, low churn risk.
+  - **Cluster 2:** Medium balance, moderate churn risk.
+- **Business Impact:**
+  - Insights help businesses **target customer groups** with personalized retention strategies.
 
-MLflow is used to track and log experiment details, including model parameters, metrics, and the final model.
-Experiment Tracking: MLflow logs each experiment's parameters (such as the best hyperparameters) and metrics (such as precision, recall, and F1 score).
-Model Registration: The best model is logged into MLflow as a registered model (Churn_RF_Model), making it easy to deploy and monitor.
-6. Conclusion and Insights:
-Customer Segments: By using K-Means clustering, customers are segmented into three distinct groups, each with different features such as account balance and geography.
+---
 
-Cluster 0: Customers with higher account balances and a moderate likelihood of churning.
-Cluster 1: Customers with lower balances and a lower likelihood of churning.
-Cluster 2: Customers with medium balances and a moderate to low likelihood of exiting.
-Targeted Marketing and Retention: These customer segments provide valuable insights for targeting specific customer groups with personalized retention strategies.
+## 🔧 Key Technologies and Libraries Used
+| Category               | Libraries/Tools |
+|------------------------|----------------|
+| **Data Preprocessing** | `pandas, scikit-learn, imbalanced-learn` |
+| **Machine Learning**   | `RandomForestClassifier, GridSearchCV, SMOTE` |
+| **Clustering**         | `KMeans, PCA` |
+| **Model Experimentation** | `MLflow` |
+| **Visualization**      | `matplotlib` |
 
-Key Technologies and Libraries Used:
-Data Preprocessing: pandas, scikit-learn, imbalanced-learn
-Machine Learning: RandomForestClassifier, GridSearchCV, SMOTE
-Clustering and Segmentation: KMeans, PCA
-Model Experimentation and Tracking: MLflow
-Visualization: matplotlib
+---
+
+## 📂 Project Structure
